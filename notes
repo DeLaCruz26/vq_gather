@@ -1,0 +1,31 @@
+Interface
+- user can signup/login
+- user can add his/her car
+- user can view all cars
+- user can edit/delete car
+- user can logout
+
+User Class
+- has secure password
+- has many cars
+- name, password
+
+Car Class
+- belongs to user
+- make, model, year
+
+User controller
+- get users/signup >> renders sign up form 
+- post users/signup >> processes signup form, creates user
+- users/login >> renders login form
+- users/login >> processes login form 
+- users/:id/cars >> view all of users cars
+
+Car Class
+- get cars/new >> renders new car form
+- post cars >> rsvp car
+- get cars >> view all cars
+- cars/:id >> render one car
+- cars/:id/edit >> renders edit form for car
+- cars/:id >> edits car
+- cars/:id/delete >> delete car
