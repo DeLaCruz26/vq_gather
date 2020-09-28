@@ -1,0 +1,9 @@
+<h2> Sweet Ride! </h2>
+Make: <%= @car.make %><br>
+Model: <%= @car.model %><br>
+Year: <%= @car.year %><br>
+
+<form method="post" action="/cars/<%= @car.id %>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+</form>
