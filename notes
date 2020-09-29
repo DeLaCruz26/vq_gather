@@ -29,3 +29,12 @@ Car Class
 - cars/:id/edit >> renders edit form for car
 - cars/:id >> edits car
 - cars/:id/delete >> delete car
+
+<div class="container">
+
+  <h1 class="welcome-title"> VQ Gather </h1>
+  <img class="welcome-img" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.pinterest.com%2Fpin%2F485474034805048980%2F&psig=AOvVaw31l3KYKA5yXLRh0aNcyGvE&ust=1601422508964000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLDMwvWBjewCFQAAAAAdAAAAABAD">
+
+  <a href="users/signup">Sign Up!</a>
+  <a href="">Login</a>
+</div>
