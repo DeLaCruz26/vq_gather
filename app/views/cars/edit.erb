@@ -1,8 +1,8 @@
 <form action="/cars/<%= @car.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="patch"
+    <input id="hidden" type="hidden" name="_method" value="patch">
     Make: <input type="text" value="<%= @car.make %>" name="make">
     Model: <input type="text" value="<%= @car.model %>" name="model">
     Year: <input type="number" value="<%= @car.year %>" name="year"<br><br>
     <br>
-    <input type="submit" value="RSVP">
+    <input type="submit" value="Edit">
 </form>

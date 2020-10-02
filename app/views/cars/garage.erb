@@ -1,0 +1,10 @@
+<h2 style="color:mediumseagreen; text-align:center;"> My Garage! </h2>
+<% @user_cars.each do |car| %>
+    <a href="/cars/<%= car.id %>">
+    <%= car.make %>
+    <%= car.model %>
+    <%= car.year %></a>
+<% end %>
+<br><br>
+<a href="/users/:id">Home</a>
+

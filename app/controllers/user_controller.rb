@@ -4,15 +4,17 @@ class UserController < ApplicationController
     end
 
     post '/users/signup' do
-        if params[:username] == "" && params[:password] == ""
-            redirect '/users/signup'
-        else
-            @user = User.create(
+        @user = User.new(
             username: params[:username], 
             password: params[:password]
         )
+        if @user.save
             session[:user_id] = @user.id
+            flash[:message] = "Welcome #{@user.username} to the VQ Family!"
             redirect "/users/#{@user.id}"
+        else
+            flash[:error] = "Couldn't sign you up, #{@user.errors.full_messages.to_sentence}!"
+            redirect "/users/signup"
         end
     end
 
@@ -29,8 +31,10 @@ class UserController < ApplicationController
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
+            flash[:message] = "Welcome back #{@user.username}"
             redirect "/users/#{@user.id}"
         else
+            flash[:error] = "Invalid username or password. Try again!"
             redirect '/users/login'
         end
         
@@ -42,7 +46,7 @@ class UserController < ApplicationController
     end
 
     get '/users/:id' do 
-        @user = User.find(params[:id])
+        @user = User.find(session[:user_id])
         erb :'/users/show'
     end
 end

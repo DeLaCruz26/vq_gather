@@ -1,2 +1,10 @@
-<h1> Here are all the sweet rides that are going to be gathering! </h1>
+<h2 style="color:steelblue; text-align:center;"> The next VQ gathering lineup! </h2>
+<% @cars.each do |car| %>
+    <a href="/cars/<%= car.id %>"><h4><%= car.user.username %></h4></a>
+    <%= car.make %>
+    <%= car.model %>
+    <%= car.year %>  
+<% end %>
+<br><br>
+<a href="/users/:id">Home</a>
 
