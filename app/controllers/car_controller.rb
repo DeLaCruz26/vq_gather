@@ -19,7 +19,7 @@ class CarController < ApplicationController
             flash[:message] = "Added car to the gather!"
             redirect "/cars/#{@car.id}"
         else
-            flash[:error] = "Couldn't add car to the gather. #{@car.errors.full_messages.to_sentence}!"
+            flash[:error] = "Couldn't register car to the gather. #{@car.errors.full_messages.to_sentence}!"
             redirect "/cars/new"
         end
     end
